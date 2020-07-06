@@ -1,0 +1,526 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{05FAD8FE-DB93-4749-BCC4-4B8F51BAD8EE}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>QC</RootNamespace>
+    <AssemblyName>QC</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x64\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <LangVersion>7.3</LangVersion>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
+    <OutputPath>bin\x64\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <LangVersion>7.3</LangVersion>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AdvancedDataGridView, Version=0.1.0.10, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\ADGV.0.1.0.10\lib\net40\AdvancedDataGridView.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu.Licensing, Version=1.5.0.0, Culture=neutral, PublicKeyToken=f89b4760ba7dcb6b, processorArchitecture=MSIL">
+      <HintPath>..\packages\Bunifu.UI.WinForms.2.1.8\lib\Bunifu.Licensing.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu.UI.WinForms.1.5.3, Version=1.5.3.0, Culture=neutral, PublicKeyToken=e8e24ccd28363fe9, processorArchitecture=MSIL">
+      <HintPath>..\packages\Bunifu.UI.WinForms.2.1.8\lib\Bunifu.UI.WinForms.1.5.3.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu.UI.WinForms.BunifuButton, Version=2.1.8.0, Culture=neutral, PublicKeyToken=e8e24ccd28363fe9, processorArchitecture=MSIL">
+      <HintPath>..\packages\Bunifu.UI.WinForms.2.1.8\lib\Bunifu.UI.WinForms.BunifuButton.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu.UI.WinForms.BunifuCheckBox, Version=2.1.8.0, Culture=neutral, PublicKeyToken=e8e24ccd28363fe9, processorArchitecture=MSIL">
+      <HintPath>..\packages\Bunifu.UI.WinForms.2.1.8\lib\Bunifu.UI.WinForms.BunifuCheckBox.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu.UI.WinForms.BunifuCircleProgress, Version=2.1.8.0, Culture=neutral, PublicKeyToken=e8e24ccd28363fe9, processorArchitecture=MSIL">
+      <HintPath>..\packages\Bunifu.UI.WinForms.2.1.8\lib\Bunifu.UI.WinForms.BunifuCircleProgress.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu.UI.WinForms.BunifuColorTransition, Version=2.1.8.0, Culture=neutral, PublicKeyToken=e8e24ccd28363fe9, processorArchitecture=MSIL">
+      <HintPath>..\packages\Bunifu.UI.WinForms.2.1.8\lib\Bunifu.UI.WinForms.BunifuColorTransition.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu.UI.WinForms.BunifuDataGridView, Version=2.1.8.0, Culture=neutral, PublicKeyToken=e8e24ccd28363fe9, processorArchitecture=MSIL">
+      <HintPath>..\packages\Bunifu.UI.WinForms.2.1.8\lib\Bunifu.UI.WinForms.BunifuDataGridView.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu.UI.WinForms.BunifuDatePicker, Version=2.1.8.0, Culture=neutral, PublicKeyToken=e8e24ccd28363fe9, processorArchitecture=MSIL">
+      <HintPath>..\packages\Bunifu.UI.WinForms.2.1.8\lib\Bunifu.UI.WinForms.BunifuDatePicker.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu.UI.WinForms.BunifuDropdown, Version=2.1.8.0, Culture=neutral, PublicKeyToken=e8e24ccd28363fe9, processorArchitecture=MSIL">
+      <HintPath>..\packages\Bunifu.UI.WinForms.2.1.8\lib\Bunifu.UI.WinForms.BunifuDropdown.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu.UI.WinForms.BunifuFormDock, Version=2.1.8.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Bunifu.UI.WinForms.2.1.8\lib\Bunifu.UI.WinForms.BunifuFormDock.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu.UI.WinForms.BunifuGauge, Version=2.1.8.0, Culture=neutral, PublicKeyToken=e8e24ccd28363fe9, processorArchitecture=MSIL">
+      <HintPath>..\packages\Bunifu.UI.WinForms.2.1.8\lib\Bunifu.UI.WinForms.BunifuGauge.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu.UI.WinForms.BunifuGradientPanel, Version=2.1.8.0, Culture=neutral, PublicKeyToken=e8e24ccd28363fe9, processorArchitecture=MSIL">
+      <HintPath>..\packages\Bunifu.UI.WinForms.2.1.8\lib\Bunifu.UI.WinForms.BunifuGradientPanel.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu.UI.WinForms.BunifuImageButton, Version=2.1.8.0, Culture=neutral, PublicKeyToken=e8e24ccd28363fe9, processorArchitecture=MSIL">
+      <HintPath>..\packages\Bunifu.UI.WinForms.2.1.8\lib\Bunifu.UI.WinForms.BunifuImageButton.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu.UI.WinForms.BunifuLabel, Version=2.1.8.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Bunifu.UI.WinForms.2.1.8\lib\Bunifu.UI.WinForms.BunifuLabel.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu.UI.WinForms.BunifuPages, Version=2.1.8.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Bunifu.UI.WinForms.2.1.8\lib\Bunifu.UI.WinForms.BunifuPages.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu.UI.WinForms.BunifuPictureBox, Version=2.1.8.0, Culture=neutral, PublicKeyToken=e8e24ccd28363fe9, processorArchitecture=MSIL">
+      <HintPath>..\packages\Bunifu.UI.WinForms.2.1.8\lib\Bunifu.UI.WinForms.BunifuPictureBox.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu.UI.WinForms.BunifuProgressBar, Version=2.1.8.0, Culture=neutral, PublicKeyToken=e8e24ccd28363fe9, processorArchitecture=MSIL">
+      <HintPath>..\packages\Bunifu.UI.WinForms.2.1.8\lib\Bunifu.UI.WinForms.BunifuProgressBar.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu.UI.WinForms.BunifuRadioButton, Version=2.1.8.0, Culture=neutral, PublicKeyToken=e8e24ccd28363fe9, processorArchitecture=MSIL">
+      <HintPath>..\packages\Bunifu.UI.WinForms.2.1.8\lib\Bunifu.UI.WinForms.BunifuRadioButton.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu.UI.WinForms.BunifuScrollBar, Version=2.1.8.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Bunifu.UI.WinForms.2.1.8\lib\Bunifu.UI.WinForms.BunifuScrollBar.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu.UI.WinForms.BunifuSeparator, Version=2.1.8.0, Culture=neutral, PublicKeyToken=e8e24ccd28363fe9, processorArchitecture=MSIL">
+      <HintPath>..\packages\Bunifu.UI.WinForms.2.1.8\lib\Bunifu.UI.WinForms.BunifuSeparator.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu.UI.WinForms.BunifuShadowPanel, Version=2.1.8.0, Culture=neutral, PublicKeyToken=e8e24ccd28363fe9, processorArchitecture=MSIL">
+      <HintPath>..\packages\Bunifu.UI.WinForms.2.1.8\lib\Bunifu.UI.WinForms.BunifuShadowPanel.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu.UI.WinForms.BunifuSlider, Version=2.1.8.0, Culture=neutral, PublicKeyToken=e8e24ccd28363fe9, processorArchitecture=MSIL">
+      <HintPath>..\packages\Bunifu.UI.WinForms.2.1.8\lib\Bunifu.UI.WinForms.BunifuSlider.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu.UI.WinForms.BunifuTextbox, Version=2.1.8.0, Culture=neutral, PublicKeyToken=e8e24ccd28363fe9, processorArchitecture=MSIL">
+      <HintPath>..\packages\Bunifu.UI.WinForms.2.1.8\lib\Bunifu.UI.WinForms.BunifuTextbox.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu.UI.WinForms.BunifuToggleSwitch, Version=2.1.8.0, Culture=neutral, PublicKeyToken=e8e24ccd28363fe9, processorArchitecture=MSIL">
+      <HintPath>..\packages\Bunifu.UI.WinForms.2.1.8\lib\Bunifu.UI.WinForms.BunifuToggleSwitch.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu.UI.WinForms.BunifuToolTip, Version=2.1.8.0, Culture=neutral, PublicKeyToken=e8e24ccd28363fe9, processorArchitecture=MSIL">
+      <HintPath>..\packages\Bunifu.UI.WinForms.2.1.8\lib\Bunifu.UI.WinForms.BunifuToolTip.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu.UI.WinForms.BunifuTransition, Version=2.1.8.0, Culture=neutral, PublicKeyToken=e8e24ccd28363fe9, processorArchitecture=MSIL">
+      <HintPath>..\packages\Bunifu.UI.WinForms.2.1.8\lib\Bunifu.UI.WinForms.BunifuTransition.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu.UI.WinForms.BunifuUserControl, Version=2.1.8.0, Culture=neutral, PublicKeyToken=e8e24ccd28363fe9, processorArchitecture=MSIL">
+      <HintPath>..\packages\Bunifu.UI.WinForms.2.1.8\lib\Bunifu.UI.WinForms.BunifuUserControl.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu.UI.WinForms.Deprecated, Version=2.1.8.0, Culture=neutral, PublicKeyToken=e8e24ccd28363fe9, processorArchitecture=MSIL">
+      <HintPath>..\packages\Bunifu.UI.WinForms.2.1.8\lib\Bunifu.UI.WinForms.Deprecated.dll</HintPath>
+    </Reference>
+    <Reference Include="CircularProgressBar, Version=2.8.0.16, Culture=neutral, PublicKeyToken=310fd07b25df79b3, processorArchitecture=MSIL">
+      <HintPath>..\packages\CircularProgressBar.2.8.0.16\lib\net40\CircularProgressBar.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Bcl.AsyncInterfaces, Version=1.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Bcl.AsyncInterfaces.1.1.1\lib\net461\Microsoft.Bcl.AsyncInterfaces.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Office.Interop.Excel, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Office.Interop.Excel.15.0.4795.1000\lib\net20\Microsoft.Office.Interop.Excel.dll</HintPath>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="Npgsql, Version=4.1.3.1, Culture=neutral, PublicKeyToken=5d8b90d52f46fda7, processorArchitecture=MSIL">
+      <HintPath>..\packages\Npgsql.4.1.3.1\lib\net461\Npgsql.dll</HintPath>
+    </Reference>
+    <Reference Include="PresentationFramework" />
+    <Reference Include="Renci.SshNet, Version=2016.1.0.0, Culture=neutral, PublicKeyToken=1cee9f8bde3db106, processorArchitecture=MSIL">
+      <HintPath>..\packages\SSH.NET.2016.1.0\lib\net40\Renci.SshNet.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Activities" />
+    <Reference Include="System.Buffers, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Buffers.4.5.1\lib\net461\System.Buffers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ComponentModel" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Configuration.Install" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Design" />
+    <Reference Include="System.Drawing.Design" />
+    <Reference Include="System.IO.Compression" />
+    <Reference Include="System.IO.Compression.FileSystem" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Memory, Version=4.0.1.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Memory.4.5.4\lib\net461\System.Memory.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Numerics" />
+    <Reference Include="System.Numerics.Vectors, Version=4.1.4.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Numerics.Vectors.4.5.0\lib\net46\System.Numerics.Vectors.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.Caching" />
+    <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=4.0.6.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Runtime.CompilerServices.Unsafe.4.7.1\lib\net461\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Text.Encodings.Web, Version=4.0.4.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Text.Encodings.Web.4.6.0\lib\netstandard2.0\System.Text.Encodings.Web.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Text.Json, Version=4.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Text.Json.4.6.0\lib\net461\System.Text.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Threading.Tasks.Extensions, Version=4.2.0.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Threading.Tasks.Extensions.4.5.4\lib\net461\System.Threading.Tasks.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.ValueTuple, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.ValueTuple.4.5.0\lib\net47\System.ValueTuple.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xaml" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="WinFormAnimation, Version=1.6.0.4, Culture=neutral, PublicKeyToken=310fd07b25df79b3, processorArchitecture=MSIL">
+      <HintPath>..\packages\WinFormAnimation.1.6.0.4\lib\net40\WinFormAnimation.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Global\Classes\LeaderSequence.cs" />
+    <Compile Include="Stages\8_LEADERS\LEADERS_Control.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Stages\8_LEADERS\LEADERS_Control.Designer.cs">
+      <DependentUpon>LEADERS_Control.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Stages\6_SECOND_QC\SECOND_QC_Control.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Stages\6_SECOND_QC\SECOND_QC_Control.Designer.cs">
+      <DependentUpon>SECOND_QC_Control.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Stages\7_ARCHIVE\ARCHIVE_Control.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Stages\7_ARCHIVE\ARCHIVE_Control.Designer.cs">
+      <DependentUpon>ARCHIVE_Control.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Global\Forms\Analyzers\Compare_View.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Global\Forms\Analyzers\Compare_View.Designer.cs">
+      <DependentUpon>Compare_View.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Stages\1_JOB_CONTROL\Edit_MEDIA_ID.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Stages\1_JOB_CONTROL\Edit_MEDIA_ID.Designer.cs">
+      <DependentUpon>Edit_MEDIA_ID.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Stages\1_JOB_CONTROL\Edit_Flow_Name.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Stages\1_JOB_CONTROL\Edit_Flow_Name.Designer.cs">
+      <DependentUpon>Edit_Flow_Name.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Global\Main Form\Generate_Page.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Global\Main Form\Generate_Page.Designer.cs">
+      <DependentUpon>Generate_Page.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Global\Classes\All_Coments_Storage.cs" />
+    <Compile Include="Global\Forms\Comment.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Global\Forms\Comment.Designer.cs">
+      <DependentUpon>Comment.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Global\Controls\FlatTabControl.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Global\Classes\Open_Excel.cs" />
+    <Compile Include="Stages\5_FINAL_OUTPUT\Analyzers_Out.cs" />
+    <Compile Include="Stages\5_FINAL_OUTPUT\FINAL_OUTPUT_Control.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Stages\5_FINAL_OUTPUT\FINAL_OUTPUT_Control.Designer.cs">
+      <DependentUpon>FINAL_OUTPUT_Control.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Stages\5_FINAL_OUTPUT\Open_Counts_Output.cs" />
+    <Compile Include="Stages\5_FINAL_OUTPUT\Open_Tally_Out.cs" />
+    <Compile Include="Stages\4_PF\PF_Control.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Stages\4_PF\PF_Control.Designer.cs">
+      <DependentUpon>PF_Control.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Stages\4_PF\Prestort_Reports.cs" />
+    <Compile Include="Stages\3_JOB\Analyzers_Job.cs" />
+    <Compile Include="Stages\3_JOB\JOB_Control.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Stages\3_JOB\JOB_Control.Designer.cs">
+      <DependentUpon>JOB_Control.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Stages\3_JOB\Open_Counts_Job.cs" />
+    <Compile Include="Stages\3_JOB\Open_Tally_Job.cs" />
+    <Compile Include="Stages\2_PRE_JOB\Analyzers_Input.cs" />
+    <Compile Include="Global\Forms\Counts\Counts_View.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Global\Forms\Counts\Counts_View.Designer.cs">
+      <DependentUpon>Counts_View.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Global\Forms\Counts\Counts_Manager.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Global\Forms\Counts\Counts_Manager.Designer.cs">
+      <DependentUpon>Counts_Manager.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Global\Forms\Analyzers\Analyzers_Manager.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Global\Forms\Analyzers\Analyzers_Manager.Designer.cs">
+      <DependentUpon>Analyzers_Manager.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Global\Classes\ALL_A_M.cs" />
+    <Compile Include="Global\Classes\ALL_C_M.cs" />
+    <Compile Include="Global\Classes\ALL_T_M.cs" />
+    <Compile Include="Global\Main Form\Enter_CAFE.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Global\Main Form\Enter_CAFE.Designer.cs">
+      <DependentUpon>Enter_CAFE.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Global\Classes\Open_Analyzer.cs" />
+    <Compile Include="Global\Classes\Open_Tally.cs" />
+    <Compile Include="Global\Classes\READ_CAFE.cs" />
+    <Compile Include="Stages\2_PRE_JOB\Open_Counts_Input.cs" />
+    <Compile Include="Stages\2_PRE_JOB\Open_Tally_Input.cs" />
+    <Compile Include="Stages\2_PRE_JOB\PRE_JOB_Control.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Stages\2_PRE_JOB\PRE_JOB_Control.Designer.cs">
+      <DependentUpon>PRE_JOB_Control.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Stages\1_JOB_CONTROL\Add_Flow_Name.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Stages\1_JOB_CONTROL\Add_Flow_Name.Designer.cs">
+      <DependentUpon>Add_Flow_Name.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Stages\1_JOB_CONTROL\Add_MEDIA_ID.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Stages\1_JOB_CONTROL\Add_MEDIA_ID.Designer.cs">
+      <DependentUpon>Add_MEDIA_ID.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Global\Main Form\Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Global\Main Form\Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Global\Classes\Program.cs" />
+    <Compile Include="Stages\1_JOB_CONTROL\JOB_CONTROL_Control.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Stages\1_JOB_CONTROL\JOB_CONTROL_Control.Designer.cs">
+      <DependentUpon>JOB_CONTROL_Control.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Global\Classes\VALUES_FROM_CAFE.cs" />
+    <Compile Include="Global\Forms\Tallies\Tallies_Manager.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Global\Forms\Tallies\Tallies_Manager.Designer.cs">
+      <DependentUpon>Tallies_Manager.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Global\Controls\Win32.cs" />
+    <Compile Include="Global\Controls\TabIcons.cs" />
+    <Compile Include="Global\Controls\SyncListBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <EmbeddedResource Include="Stages\8_LEADERS\LEADERS_Control.resx">
+      <DependentUpon>LEADERS_Control.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Stages\6_SECOND_QC\SECOND_QC_Control.resx">
+      <DependentUpon>SECOND_QC_Control.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Stages\7_ARCHIVE\ARCHIVE_Control.resx">
+      <DependentUpon>ARCHIVE_Control.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Global\Forms\Analyzers\Compare_View.resx">
+      <DependentUpon>Compare_View.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Stages\1_JOB_CONTROL\Edit_MEDIA_ID.resx">
+      <DependentUpon>Edit_MEDIA_ID.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Stages\1_JOB_CONTROL\Edit_Flow_Name.resx">
+      <DependentUpon>Edit_Flow_Name.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Global\Main Form\Generate_Page.resx">
+      <DependentUpon>Generate_Page.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Global\Forms\Analyzers\Analyzers_Manager.resx">
+      <DependentUpon>Analyzers_Manager.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Global\Forms\Comment.resx">
+      <DependentUpon>Comment.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Global\Controls\FlatTabControl.resx">
+      <DependentUpon>FlatTabControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Global\Forms\Counts\Counts_Manager.resx">
+      <DependentUpon>Counts_Manager.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Global\Forms\Counts\Counts_View.resx">
+      <DependentUpon>Counts_View.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Global\Forms\Tallies\Tallies_Manager.resx">
+      <DependentUpon>Tallies_Manager.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Global\Main Form\Enter_CAFE.resx">
+      <DependentUpon>Enter_CAFE.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Global\Main Form\Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Stages\1_JOB_CONTROL\Add_Flow_Name.resx">
+      <DependentUpon>Add_Flow_Name.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Stages\1_JOB_CONTROL\Add_MEDIA_ID.resx">
+      <DependentUpon>Add_MEDIA_ID.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Stages\1_JOB_CONTROL\JOB_CONTROL_Control.resx">
+      <DependentUpon>JOB_CONTROL_Control.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Stages\2_PRE_JOB\PRE_JOB_Control.resx">
+      <DependentUpon>PRE_JOB_Control.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Stages\3_JOB\JOB_Control.resx">
+      <DependentUpon>JOB_Control.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Stages\4_PF\PF_Control.resx">
+      <DependentUpon>PF_Control.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Stages\5_FINAL_OUTPUT\FINAL_OUTPUT_Control.resx">
+      <DependentUpon>FINAL_OUTPUT_Control.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="app.config" />
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\list-2-24.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\list-2-32.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\toppng.com-red-x-red-x-2000x2000.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.7.2">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.7.2 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Moje.com.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\check_mark_save.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1492790934-38option_84257.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\exit_icon-icons.com_70975.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\92913_234656_control_panel.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ebb59ad59e425ee568c5e12be9c5d803.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\enter_icon-icons.com_71207.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\users_icon-icons.com_57999.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
